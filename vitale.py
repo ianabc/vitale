@@ -38,5 +38,5 @@ if __name__ == "__main__":
         plt.ylim([0, max(nvnums) * 1.1])
         plt.show()
     except ImportError:
-        print nvnums
+        print (nvnums)
 

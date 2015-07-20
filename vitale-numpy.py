@@ -1,4 +1,9 @@
-import numpy as np
+import sys
+try:
+    import numpy as np
+except ImportError:
+    print("This version REQUIRES numpy")
+    sys.exit(1)
 #
 # The "Vitale" property: The first two digits are divisible by 2, the
 # first 3 digits are divisible by 4 and so on. 
@@ -33,7 +38,7 @@ if __name__ == "__main__":
         try:
             vitale_n = vitaleproperty(n)
         except AssertionError:
-            print "Overflow likely for n=%d, INCOMPLETE!!!" % n
+            print("Overflow likely for n=%d, INCOMPLETE!!!" % n)
             break
             pass
         if (vitale_n.size != 0):
@@ -49,4 +54,5 @@ if __name__ == "__main__":
         plt.xlim([0, n+3])
         plt.show()
     except ImportError:
-        print nvnums
+        print(nvnums)
+
